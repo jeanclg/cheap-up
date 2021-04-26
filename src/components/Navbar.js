@@ -5,7 +5,7 @@ import logo from "./cheap_up_para_rmv_bg-removebg-preview.png";
 export default function Navbar() {
   return (
     <nav className="navbar navbar-light bg-dark">
-      <Link className="navbar-brand" to="#">
+      <Link className="navbar-brand" to="/">
         <img
           src={logo}
           width="134.68"
