@@ -21,6 +21,7 @@ export default class GamesList extends Component {
         originalList: [...response.data],
         originalCopyList: [...response.data],
       });
+      console.log(this.state.originalList);
     } catch (err) {
       console.error(err);
     }
@@ -51,7 +52,7 @@ export default class GamesList extends Component {
               placeholder="Search your game"
             />
           </div>
-          <table class="table">
+          <table class="table table-hover">
             <thead>
               <tr>
                 <th scope="col">SAVINGS</th>
@@ -66,7 +67,7 @@ export default class GamesList extends Component {
                   <tr>
                     <td scope="row">{Math.round(x.savings)}%</td>
                     <td>
-                      {x.salePrice}
+                      {x.salePrice}{" "}
                       <sup>
                         <s>{x.normalPrice}</s>
                       </sup>
