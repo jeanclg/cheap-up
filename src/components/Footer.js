@@ -6,11 +6,11 @@ import Github from "./Github_logo-removebg-preview.png";
 
 export default function Footer() {
   return (
-    <footer className="navbar navbar-light bg-dark">
+    <footer className="navbar navbar-static-bottom navbar-light bg-dark">
       <div className="d-flex flex-column align-content-start align-items-center">
         <h4 className="text-white">Contact us:</h4>
         <div className="d-flex align-items-center">
-          <Link className="navbar-brand" to="#">
+          <a target="_blank"className="navbar-brand" href="https://github.com/FelipeBorges1991">
             <img
               src={Github}
               width="50"
@@ -18,7 +18,7 @@ export default function Footer() {
               className="d-inline-block align-top"
               alt="logo img"
             />
-          </Link>
+          </a>
           <h6 style={{ color: "#F0E3CA" }}>Felipe Borges</h6>
         </div>
 
@@ -41,8 +41,8 @@ export default function Footer() {
       <div className="d-flex flex-column align-content-end">
         <div className="d-flex flex-column">
           <h7 style={{ color: "#F0E3CA" }} className="text-center container">
-            Created as a FrontEnd project at São Paulo Ironhack's Bootcamp in
-            April/2021.
+            Created as a FrontEnd project at Ironhack's Bootcamp campus São
+            Paulo in April/2021.
           </h7>
 
           <h7 style={{ color: "#F0E3CA" }} className="text-center container">
