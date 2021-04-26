@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 
 export default class GamesList extends Component {
   state = {
@@ -42,7 +40,7 @@ export default class GamesList extends Component {
     if (this.state.originalList) {
       return (
         <div className="container">
-          <Navbar />
+         
           <div className="input-group mb-3 mt-3">
             <input
               onChange={this.handleChange}
@@ -88,7 +86,6 @@ export default class GamesList extends Component {
               })}
             </tbody>
           </table>
-          <Footer />
         </div>
       );
     } else {
