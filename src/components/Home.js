@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-
 export default class Home extends Component {
   state = {
     stores: [],
@@ -25,7 +22,6 @@ export default class Home extends Component {
   render() {
     return (
       <div className="container">
-        <Navbar />
         <ul class="list-group">
           {this.state.stores.map((x) => {
             return (
@@ -35,7 +31,7 @@ export default class Home extends Component {
             );
           })}
         </ul>
-        <Footer />
+       
       </div>
     );
   }
