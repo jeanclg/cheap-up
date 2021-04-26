@@ -8,7 +8,7 @@ import GamesList from "./components/GamesList";
 function App() {
   return (
     <BrowserRouter>
-      <div className="container">
+      <div>
         <div className="row">
           <Route exact path="/" component={Home} />
           <Route exact path="/GamesList/:id" component={GamesList} />
