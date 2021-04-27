@@ -11,13 +11,13 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-      <Navbar/>
-        <div className="row" style={{minHeight:"1200px"}}>
+        <Navbar />
+        <div className="row" style={{ minHeight: "1200px", backgroundColor: "#F0E3CA"}}>
           <Route exact path="/" component={Home} />
           <Route exact path="/GamesList/:id" component={GamesList} />
           <Route exact path="/About" component={About} />
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </BrowserRouter>
   );
