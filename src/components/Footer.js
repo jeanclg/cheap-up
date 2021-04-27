@@ -11,7 +11,7 @@ export default function Footer() {
       style={{ backgroundColor: "#1b1a17" }}
     >
       <div className="d-flex flex-column align-content-start align-items-center">
-        <h4 className="text-white">Contact us:</h4>
+        <h4 style={{color:"#F0E3CA"}}>Contact us:</h4>
         <div className="d-flex align-items-center">
           <a
             target="_blank"
