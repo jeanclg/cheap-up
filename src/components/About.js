@@ -82,7 +82,7 @@ export default function About() {
               <a
                 target="_blank"
                 className="navbar-brand"
-                href="https://github.com/FelipeBorges1991"
+                href="https://www.instagram.com/felipedecborges/"
               >
                 <img
                   src={instagram}
@@ -96,7 +96,7 @@ export default function About() {
               <a
                 target="_blank"
                 className="navbar-brand"
-                href="https://github.com/FelipeBorges1991"
+                href="https://www.linkedin.com/in/felipe-borges-413356150/"
               >
                 <img
                   src={Linkedin}
@@ -110,7 +110,7 @@ export default function About() {
               <a
                 target="_blank"
                 className="navbar-brand"
-                href="https://github.com/FelipeBorges1991"
+                href="https://twitter.com/Fcborges18"
               >
                 <img
                   src={Twitter}
@@ -129,7 +129,7 @@ export default function About() {
               <a
                 target="_blank"
                 className="navbar-brand"
-                href="https://github.com/FelipeBorges1991"
+                href="https://github.com/jeanclg"
               >
                 <img
                   src={Github}
