@@ -4,7 +4,7 @@ import logo from "./cheap_up_para_rmv_bg-removebg-preview.png";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-light bg-dark">
+    <nav className="navbar sticky-top navbar-light" style={{backgroundColor: "#1b1a17"}}>
       <Link className="navbar-brand" to="/">
         <img
           src={logo}
@@ -15,8 +15,8 @@ export default function Navbar() {
         />
       </Link>
 
-      <Link className="navbar-brand" to="#">
-        <p style={{ color: "#F0E3CA" }}>About</p>
+      <Link className="navbar-brand" to="/About">
+        <p style={{ color: "#FF8303" }}>About</p>
       </Link>
     </nav>
   );
