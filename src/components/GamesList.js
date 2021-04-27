@@ -53,7 +53,7 @@ export default class GamesList extends Component {
               placeholder="Search your game"
             />
           </div>
-          <table class="table table-hover">
+          <table class="table table-dark table-striped table-hover">
             <thead>
               <tr>
                 <th scope="col">STORE</th>
@@ -65,40 +65,42 @@ export default class GamesList extends Component {
             </thead>
             <tbody>
               {this.state.originalList.map((x) => {
-                return (
-                  <tr>
-                    <td>
-                      <img
-                        src={`https://www.cheapshark.com/img/stores/icons/${
-                          x.storeID - 1
-                        }.png`}
-                      />
-                    </td>
-                    <td scope="row">{Math.round(x.savings)}%</td>
-                    <td>
-                      {formatter.format(x.salePrice)}{" "}
-                      <sup>
-                        <s>{formatter.format(x.normalPrice)}</s>
-                      </sup>
-                    </td>
-                    <td>
-                      <img
-                        className="mr-2"
-                        src={x.thumb}
-                        width="120px"
-                        height="45px"
-                      />
-                      <a
-                        className="badge-light"
-                        href={`https://www.cheapshark.com/redirect?dealID=${x.dealID}`}
-                        target="_black"
-                      >
-                        {x.title}
-                      </a>
-                    </td>
-                    <td>{x.dealRating}</td>
-                  </tr>
-                );
+                if (x.savings > 0) {
+                  return (
+                    <tr>
+                      <td>
+                        <img
+                          src={`https://www.cheapshark.com/img/stores/icons/${
+                            x.storeID - 1
+                          }.png`}
+                        />
+                      </td>
+                      <td scope="row">{Math.round(x.savings)}%</td>
+                      <td>
+                        {formatter.format(x.salePrice)}{" "}
+                        <sup>
+                          <s>{formatter.format(x.normalPrice)}</s>
+                        </sup>
+                      </td>
+                      <td>
+                        <img
+                          className="mr-2"
+                          src={x.thumb}
+                          width="120px"
+                          height="45px"
+                        />
+                        <a
+                          style={{ color: "white" }}
+                          href={`https://www.cheapshark.com/redirect?dealID=${x.dealID}`}
+                          target="_black"
+                        >
+                          {x.title}
+                        </a>
+                      </td>
+                      <td>{x.dealRating}</td>
+                    </tr>
+                  );
+                }
               })}
             </tbody>
           </table>
