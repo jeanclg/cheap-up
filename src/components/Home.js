@@ -49,11 +49,11 @@ export default class Home extends Component {
           <h1 className="text-center mt-5">
             Choose your store to see the sales!
           </h1>
-          <div className="card-deck row-cols-md-4 mt-5">
+          <div className="card-deck row-cols-5 justify-content-center mt-5">
             {this.state.stores.map((x) => {
               if (arr.includes(x.storeID)) {
                 return (
-                  <div className="mb-5 mr-5 text-center">
+                  <div className="mb-5 mr-2 ml-2 text-center">
                     <Link to={`/GamesList/${x.storeID}`}>
                       <img
                         className="card-img-top mb-2"
