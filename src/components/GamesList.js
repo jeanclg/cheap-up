@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-
 export default class GamesList extends Component {
   state = {
-    games: [],
     originalList: [],
     originalCopyList: [],
     searchGame: "",
@@ -21,7 +19,6 @@ export default class GamesList extends Component {
         originalList: [...response.data],
         originalCopyList: [...response.data],
       });
-      console.log(this.state.originalList);
     } catch (err) {
       console.error(err);
     }
@@ -38,10 +35,14 @@ export default class GamesList extends Component {
   };
 
   render() {
+    const formatter = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+    });
     if (this.state.originalList) {
       return (
         <div className="container">
-         
           <div className="input-group mb-3 mt-3">
             <input
               onChange={this.handleChange}
@@ -55,6 +56,7 @@ export default class GamesList extends Component {
           <table class="table table-hover">
             <thead>
               <tr>
+                <th scope="col">STORE</th>
                 <th scope="col">SAVINGS</th>
                 <th scope="col">PRICE</th>
                 <th scope="col">TITLE</th>
@@ -65,11 +67,18 @@ export default class GamesList extends Component {
               {this.state.originalList.map((x) => {
                 return (
                   <tr>
+                    <td>
+                      <img
+                        src={`https://www.cheapshark.com/img/stores/icons/${
+                          x.storeID - 1
+                        }.png`}
+                      />
+                    </td>
                     <td scope="row">{Math.round(x.savings)}%</td>
                     <td>
-                      {x.salePrice}{" "}
+                      {formatter.format(x.salePrice)}{" "}
                       <sup>
-                        <s>{x.normalPrice}</s>
+                        <s>{formatter.format(x.normalPrice)}</s>
                       </sup>
                     </td>
                     <td>
@@ -79,7 +88,13 @@ export default class GamesList extends Component {
                         width="120px"
                         height="45px"
                       />
-                      {x.title}
+                      <a
+                        className="badge-light"
+                        href={`https://www.cheapshark.com/redirect?dealID=${x.dealID}`}
+                        target="_black"
+                      >
+                        {x.title}
+                      </a>
                     </td>
                     <td>{x.dealRating}</td>
                   </tr>
