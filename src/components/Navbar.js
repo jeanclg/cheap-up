@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./cheap_up_para_rmv_bg-removebg-preview.png";
+import logo from "./Cheap_Up__3_-removebg-preview.png";
 
 export default function Navbar() {
   return (
@@ -9,7 +9,7 @@ export default function Navbar() {
         <img
           src={logo}
           width="134.68"
-          height="50"
+          height="auto"
           className="d-inline-block align-top"
           alt="logo img"
         />
