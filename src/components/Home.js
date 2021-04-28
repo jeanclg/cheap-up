@@ -4,8 +4,8 @@ import axios from "axios";
 
 export default class Home extends Component {
   state = {
-    stores: [],
-    games: [],
+    stores: null,
+    games: null,
   };
 
   componentDidMount = async () => {
@@ -34,8 +34,16 @@ export default class Home extends Component {
 
     if (!this.state.games) {
       return (
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden"></span>
+        <div className="container">
+          <div className="d-flex justify-content-center text-center">
+            <div
+              style={{ width: "10rem", height: "10rem", marginTop: "350px" }}
+              className="spinner-border"
+              role="status"
+            >
+              <span className="visually-hidden"></span>
+            </div>
+          </div>
         </div>
       );
     } else {
@@ -85,11 +93,14 @@ export default class Home extends Component {
                               <li
                                 className="list-group-item"
                                 style={{
-                                  backgroundColor: "#1b1a17",
-                                  color: "#ff8303",
+                                  backgroundColor: "#a35709",
+                                  color: "#1b1a17",
                                 }}
                               >
-                                {y.title} {formatter.format(y.salePrice)}
+                                {y.title}
+                                <span className="btn btn-dark btn-sm">
+                                  {formatter.format(y.salePrice)}
+                                </span>
                               </li>
                             </a>
                           );
