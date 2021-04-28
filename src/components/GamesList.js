@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default class GamesList extends Component {
   state = {
-    originalList: [],
+    originalList: null,
     originalCopyList: [],
     searchGame: "",
   };
@@ -107,10 +107,17 @@ export default class GamesList extends Component {
         </div>
       );
     } else {
+      console.log("dsada");
       return (
-        <div className="d-flex justify-content-center">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden"></span>
+        <div className="container">
+          <div className="d-flex justify-content-center text-center">
+            <div
+              style={{ width: "10rem", height: "10rem", marginTop: "350px" }}
+              className="spinner-border"
+              role="status"
+            >
+              <span className="visually-hidden"></span>
+            </div>
           </div>
         </div>
       );
