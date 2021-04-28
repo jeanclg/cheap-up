@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import ironhack from "./ironhack-logo.png";
 import Github from "./Github_logo-removebg-preview.png";
@@ -11,10 +10,9 @@ export default function Footer() {
       style={{ backgroundColor: "#1b1a17" }}
     >
       <div className="d-flex flex-column align-content-start align-items-center">
-        <h4 style={{color:"#F0E3CA"}}>Contact us:</h4>
+        <h4 style={{ color: "#F0E3CA" }}>Contact us:</h4>
         <div className="d-flex align-items-center">
           <a
-            target="_blank"
             className="navbar-brand"
             href="https://github.com/FelipeBorges1991"
           >
@@ -30,11 +28,7 @@ export default function Footer() {
         </div>
 
         <div className="d-flex align-items-center">
-          <a
-            target="_blank"
-            className="navbar-brand"
-            href="https://github.com/jeanclg"
-          >
+          <a className="navbar-brand" href="https://github.com/jeanclg">
             <img
               src={Github}
               width="50"
@@ -51,19 +45,18 @@ export default function Footer() {
 
       <div className="d-flex flex-column align-content-end">
         <div className="d-flex flex-column">
-          <h7 style={{ color: "#FF8303" }} className="text-center container">
+          <h6 style={{ color: "#FF8303" }} className="text-center container">
             Created as a FrontEnd project at Ironhack's Bootcamp campus São
             Paulo in April/2021.
-          </h7>
+          </h6>
 
-          <h7 style={{ color: "#FF8303" }} className="text-center container">
+          <h6 style={{ color: "#FF8303" }} className="text-center container">
             Using APIs integrations, React JavaScript, Bootstrap and other
             libraries.
-          </h7>
+          </h6>
         </div>
 
         <a
-          target="_blank"
           className="navbar-brand d-flex justify-content-center"
           href="https://www.ironhack.com/br/sao-paulo"
         >

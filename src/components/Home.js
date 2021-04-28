@@ -61,9 +61,10 @@ export default class Home extends Component {
             {this.state.stores.map((x) => {
               if (arr.includes(x.storeID)) {
                 return (
-                  <div className="mb-5 mr-2 ml-2 text-center">
+                  <div key={x.storeID} className="mb-5 mr-2 ml-2 text-center">
                     <Link to={`/GamesList/${x.storeID}`}>
                       <img
+                        alt={x.storeID}
                         className="card-img-top mb-2"
                         src={`https://www.cheapshark.com/img/stores/logos/${
                           x.storeID - 1
@@ -87,8 +88,8 @@ export default class Home extends Component {
                         if (y.storeID === x.storeID && y.dealRating > 9.5) {
                           return (
                             <a
+                              key={y.gameID}
                               href={`https://www.cheapshark.com/redirect?dealID=${y.dealID}`}
-                              target="_blank"
                             >
                               <li
                                 className="list-group-item"
@@ -104,11 +105,15 @@ export default class Home extends Component {
                               </li>
                             </a>
                           );
+                        } else {
+                          return null;
                         }
                       })}
                     </ul>
                   </div>
                 );
+              } else {
+                return null;
               }
             })}
           </div>

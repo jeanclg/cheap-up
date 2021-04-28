@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./Cheap_Up__3_-removebg-preview.png";
+import logo from "./logonavbar.png";
 
 export default function Navbar() {
   return (
-    <nav className="navbar sticky-top navbar-light" style={{backgroundColor: "#1b1a17"}}>
+    <nav
+      className="navbar sticky-top navbar-light"
+      style={{ backgroundColor: "#1b1a17" }}
+    >
       <Link className="navbar-brand" to="/">
         <img
           src={logo}
