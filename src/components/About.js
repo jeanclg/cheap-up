@@ -40,7 +40,6 @@ export default function About() {
             We used the CheapShark API,
           </h2>
           <a
-            target="_blank"
             className="navbar-brand d-flex justify-content-center"
             href="https://apidocs.cheapshark.com/"
           >
@@ -66,7 +65,6 @@ export default function About() {
             <h3>Felipe Borges</h3>
             <div className="d-flex align-items-center">
               <a
-                target="_blank"
                 className="navbar-brand"
                 href="https://github.com/FelipeBorges1991"
               >
@@ -80,7 +78,6 @@ export default function About() {
               </a>
 
               <a
-                target="_blank"
                 className="navbar-brand"
                 href="https://www.instagram.com/felipedecborges/"
               >
@@ -94,7 +91,6 @@ export default function About() {
               </a>
 
               <a
-                target="_blank"
                 className="navbar-brand"
                 href="https://www.linkedin.com/in/felipe-borges-413356150/"
               >
@@ -107,11 +103,7 @@ export default function About() {
                 />
               </a>
 
-              <a
-                target="_blank"
-                className="navbar-brand"
-                href="https://twitter.com/Fcborges18"
-              >
+              <a className="navbar-brand" href="https://twitter.com/Fcborges18">
                 <img
                   src={Twitter}
                   width="50"
@@ -126,11 +118,7 @@ export default function About() {
           <div className="d-flex flex-column align-items-center">
             <h3>Jean Garcia</h3>
             <div>
-              <a
-                target="_blank"
-                className="navbar-brand"
-                href="https://github.com/jeanclg"
-              >
+              <a className="navbar-brand" href="https://github.com/jeanclg">
                 <img
                   src={Github}
                   width="50"

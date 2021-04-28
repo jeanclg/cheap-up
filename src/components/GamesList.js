@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default class GamesList extends Component {
@@ -53,7 +52,7 @@ export default class GamesList extends Component {
               placeholder="Search your game"
             />
           </div>
-          <table class="table table-dark table-striped table-hover">
+          <table className="table table-dark table-striped table-hover">
             <thead>
               <tr>
                 <th scope="col">STORE</th>
@@ -67,15 +66,16 @@ export default class GamesList extends Component {
               {this.state.originalList.map((x) => {
                 if (x.savings > 0) {
                   return (
-                    <tr>
+                    <tr key={x.gameID}>
                       <td>
                         <img
+                          alt={x.gameID}
                           src={`https://www.cheapshark.com/img/stores/icons/${
                             x.storeID - 1
                           }.png`}
                         />
                       </td>
-                      <td scope="row">{Math.round(x.savings)}%</td>
+                      <td>{Math.round(x.savings)}%</td>
                       <td>
                         {formatter.format(x.salePrice)}{" "}
                         <sup>
@@ -84,6 +84,7 @@ export default class GamesList extends Component {
                       </td>
                       <td>
                         <img
+                          alt={x.gameID}
                           className="mr-2"
                           src={x.thumb}
                           width="120px"
@@ -100,6 +101,8 @@ export default class GamesList extends Component {
                       <td>{x.dealRating}</td>
                     </tr>
                   );
+                } else {
+                  return null;
                 }
               })}
             </tbody>
@@ -107,7 +110,6 @@ export default class GamesList extends Component {
         </div>
       );
     } else {
-      console.log("dsada");
       return (
         <div className="container">
           <div className="d-flex justify-content-center text-center">
