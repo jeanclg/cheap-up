@@ -13,6 +13,8 @@ export default function Footer() {
         <h4 style={{ color: "#F0E3CA" }}>Contact us:</h4>
         <div className="d-flex align-items-center">
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             className="navbar-brand"
             href="https://github.com/FelipeBorges1991"
           >
@@ -28,7 +30,12 @@ export default function Footer() {
         </div>
 
         <div className="d-flex align-items-center">
-          <a className="navbar-brand" href="https://github.com/jeanclg">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="navbar-brand"
+            href="https://github.com/jeanclg"
+          >
             <img
               src={Github}
               width="50"
@@ -57,6 +64,8 @@ export default function Footer() {
         </div>
 
         <a
+          target="_blank"
+          rel="noopener noreferrer"
           className="navbar-brand d-flex justify-content-center"
           href="https://www.ironhack.com/br/sao-paulo"
         >

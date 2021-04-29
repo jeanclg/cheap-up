@@ -88,6 +88,8 @@ export default class Home extends Component {
                         if (y.storeID === x.storeID && y.dealRating > 9.5) {
                           return (
                             <a
+                              target="_blank"
+                              rel="noopener noreferrer"
                               key={y.gameID}
                               href={`https://www.cheapshark.com/redirect?dealID=${y.dealID}`}
                             >

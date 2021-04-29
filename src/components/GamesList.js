@@ -93,7 +93,8 @@ export default class GamesList extends Component {
                         <a
                           style={{ color: "white" }}
                           href={`https://www.cheapshark.com/redirect?dealID=${x.dealID}`}
-                          target="_black"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           {x.title}
                         </a>
