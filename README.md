@@ -1,7 +1,7 @@
 # Cheap-Up
 
 Built in ReactJs.
-See the project [HERE](https://friendly-babbage-cd0d52.netlify.app/).
+See the project [HERE](https://cheapup.netlify.app/).
 
 ## ABOUT THE PROJECT
 
