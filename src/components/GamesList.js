@@ -10,6 +10,7 @@ export default class GamesList extends Component {
 
   componentDidMount = async () => {
     try {
+      // Pega da api a lista com todos os jogos
       const response = await axios.get(
         `https://www.cheapshark.com/api/1.0/deals?storeID=${this.props.match.params.id}&upperPrice=50`
       );
@@ -23,6 +24,7 @@ export default class GamesList extends Component {
     }
   };
 
+  // Metodo que pega o que o usuario digitar no input e coloca no state
   handleChange = (event) => {
     const newList = this.state.originalCopyList.filter((x) => {
       return x.title.toLowerCase().includes(event.target.value.toLowerCase());
@@ -34,11 +36,13 @@ export default class GamesList extends Component {
   };
 
   render() {
+    // Variavel que tem os estilos para o sifrão da moeda nos preços
     const formatter = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
       minimumFractionDigits: 2,
     });
+    // Verifica se ja foi carregada a api, caso não carrega o spiner
     if (this.state.originalList) {
       return (
         <div className="container">
@@ -63,49 +67,54 @@ export default class GamesList extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.originalList.map((x) => {
-                if (x.savings > 0) {
-                  return (
-                    <tr key={x.gameID}>
-                      <td>
-                        <img
-                          alt={x.gameID}
-                          src={`https://www.cheapshark.com/img/stores/icons/${
-                            x.storeID - 1
-                          }.png`}
-                        />
-                      </td>
-                      <td>{Math.round(x.savings)}%</td>
-                      <td>
-                        {formatter.format(x.salePrice)}{" "}
-                        <sup>
-                          <s>{formatter.format(x.normalPrice)}</s>
-                        </sup>
-                      </td>
-                      <td>
-                        <img
-                          alt={x.gameID}
-                          className="mr-2"
-                          src={x.thumb}
-                          width="120px"
-                          height="45px"
-                        />
-                        <a
-                          style={{ color: "white" }}
-                          href={`https://www.cheapshark.com/redirect?dealID=${x.dealID}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {x.title}
-                        </a>
-                      </td>
-                      <td>{x.dealRating}</td>
-                    </tr>
-                  );
-                } else {
-                  return null;
-                }
-              })}
+              {
+                // Roda por cada elemento da lista de jogos e retorna o JSX dos jogos
+                this.state.originalList.map((x) => {
+                  // Só retorna para a lista os jogos que tenham desconto
+                  if (x.savings > 0) {
+                    return (
+                      <tr key={x.gameID}>
+                        <td>
+                          <img
+                            alt={x.gameID}
+                            src={`https://www.cheapshark.com/img/stores/icons/${
+                              x.storeID - 1
+                            }.png`}
+                          />
+                        </td>
+                        <td>{Math.round(x.savings)}%</td>
+                        <td>
+                          {formatter.format(x.salePrice)}{" "}
+                          <sup>
+                            <s>{formatter.format(x.normalPrice)}</s>
+                          </sup>
+                        </td>
+                        <td>
+                          <img
+                            alt={x.gameID}
+                            className="mr-2"
+                            src={x.thumb}
+                            width="120px"
+                            height="45px"
+                          />
+                          <a
+                            style={{ color: "white" }}
+                            href={`https://www.cheapshark.com/redirect?dealID=${x.dealID}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {x.title}
+                          </a>
+                        </td>
+                        <td>{x.dealRating}</td>
+                      </tr>
+                    );
+                  } // Precisa ter esse "else return null" pois o map precisa retornar algo diretamente e não dentro de um if
+                  else {
+                    return null;
+                  }
+                })
+              }
             </tbody>
           </table>
         </div>
